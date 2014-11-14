@@ -1,0 +1,20 @@
+{
+  "name": "korg",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "supervisor -n exit example/index.js"
+  },
+  "author": "David Guttman <david@guttman.io> (http://davidguttman.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "midi": "^0.9.0",
+    "wildemitter": "^1.0.1"
+  },
+  "devDependencies": {
+    "supervisor": "^0.6.0"
+  },
+  "directories": {
+    "example": "example"
+  }
+}
