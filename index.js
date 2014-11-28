@@ -4,6 +4,8 @@ var Emitter = require('wildemitter')
 module.exports = Korg
 
 function Korg () {
+  this.scene = 1
+
   this.input = this.createInput()
 
   this.input.on('message', this.handleMessage.bind(this))
@@ -16,6 +18,11 @@ Korg.prototype = new Emitter
 
 Korg.prototype.handleMessage = function(delta, raw) {
   var msg = this.parseMessage(raw)
+
+  if (msg.scene) {
+    this.scene = msg.scene
+    return this.emit('scene', msg.scene)
+  }
 
   if (msg.control >= 14 && msg.control <= 22) {
     n = msg.control - 13
@@ -63,10 +70,17 @@ Korg.prototype.handleMessage = function(delta, raw) {
 }
 
 Korg.prototype.parseMessage = function(raw) {
-  var message = {
-    control: raw[1],
-    value: raw[2]/127
+  if (raw[0] === 240) {
+    var message = {
+      scene: raw[9] + 1
+    }
+  } else {
+    var message = {
+      control: raw[1],
+      value: raw[2]/127
+    }
   }
+
   return message
 }
 
