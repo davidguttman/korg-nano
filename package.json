@@ -16,5 +16,6 @@
   },
   "directories": {
     "example": "example"
-  }
+  },
+  "description": "A simple module for getting data events from a Korg Nano Kontrol."
 }
