@@ -36,6 +36,30 @@ Korg.prototype.handleMessage = function(delta, raw) {
     n = msg.control - 23
     return this.emit('button:'+n, msg.value)
   }
+
+  if (msg.control === 47) {
+    return this.emit('button:prev', msg.value)
+  }
+
+  if (msg.control === 45) {
+    return this.emit('button:play', msg.value)
+  }
+
+  if (msg.control === 48) {
+    return this.emit('button:next', msg.value)
+  }
+
+  if (msg.control === 49) {
+    return this.emit('button:loop', msg.value)
+  }
+
+  if (msg.control === 46) {
+    return this.emit('button:stop', msg.value)
+  }
+
+  if (msg.control === 44) {
+    return this.emit('button:record', msg.value)
+  }
 }
 
 Korg.prototype.parseMessage = function(raw) {
