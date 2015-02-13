@@ -17,5 +17,13 @@
   "directories": {
     "example": "example"
   },
-  "description": "A simple module for getting data events from a Korg Nano Kontrol."
+  "description": "A simple module for getting data events from a Korg Nano Kontrol.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidguttman/korg-nano.git"
+  },
+  "bugs": {
+    "url": "https://github.com/davidguttman/korg-nano/issues"
+  },
+  "homepage": "https://github.com/davidguttman/korg-nano"
 }
