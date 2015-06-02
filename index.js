@@ -90,7 +90,7 @@ Korg.prototype.createInput = function() {
   var portCount = input.getPortCount()
   for (var i = 0; i <= portCount; i++) {
     var name = input.getPortName(i)
-    if (name.match(/nanoKONTROL SLIDER\/KNOB/)) {
+    if (name.match(/nanoKONTROL/)) {
       input.openPort(i)
       break
     }
